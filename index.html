@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄色传媒有限公司 | 影像力量 · 品牌叙事 内容生态</title>
+<meta name="description" content="黄色传媒有限公司是一家专注品牌影像、纪录片创作与内容生态运营的综合型视频传媒机构，以专业制作与社区共创连接品牌与观众。">
+<style>
+  :root{
+    --yellow:#f7c400;
+    --yellow-deep:#e0a800;
+    --ink:#111214;
+    --ink-2:#1c1e22;
+    --paper:#f5f2ea;
+    --paper-2:#ece7da;
+    --gray:#6c6f76;
+    --line:rgba(17,18,20,.12);
+    --white:#fffdf7;
+    --shadow:0 18px 50px rgba(17,18,20,.14);
+    --radius:18px;
+    --max:1200px;
+    --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gray);font-weight:600;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--yellow-deep)}
+  h2.section-title{
+    font-size:clamp(28px,3.6vw,46px);
+    line-height:1.2;font-weight:800;letter-spacing:-.02em;margin:16px 0 14px;
+  }
+  .section-sub{color:var(--gray);max-width:640px;font-size:15.5px}
+  section{padding:96px 0;position:relative}
+
+  /* ---------- 顶部导航 ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:80;
+    background:rgba(245,242,234,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease, background .3s ease;
+  }
+  .topbar.scrolled{box-shadow:0 6px 24px rgba(17,18,20,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.01em}
+  .brand-mark{
+    width:40px;height:40px;border-radius:11px;
+    background:var(--ink);color:var(--yellow);
+    display:grid;place-items:center;font-size:18px;font-weight:900;
+    box-shadow:inset 0 0 0 2px rgba(247,196,0,.25);
+  }
+  .brand-name{font-size:17px}
+  .brand-name small{display:block;font-size:10.5px;letter-spacing:.22em;color:var(--gray);font-weight:600;text-transform:uppercase;margin-top:-2px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative;padding:6px 0}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--yellow-deep);
+    transition:width .28s ease;
+  }
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    padding:11px 22px;border-radius:999px;background:var(--ink);color:var(--paper);
+    font-size:14px;font-weight:700;transition:transform .25s ease, background .25s ease;
+  }
+  .nav-cta:hover{background:var(--yellow-deep);color:var(--ink);transform:translateY(-2px)}
+  .menu-toggle{display:none;font-size:24px;line-height:1;padding:8px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:80px 0 90px;
+    background:
+      radial-gradient(900px 420px at 82% 4%, rgba(247,196,0,.30), transparent 62%),
+      radial-gradient(700px 380px at 4% 96%, rgba(247,196,0,.14), transparent 60%),
+      var(--paper);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  h1.hero-title{
+    font-size:clamp(42px,6.4vw,84px);
+    line-height:1.02;letter-spacing:-.035em;font-weight:900;
+    margin:20px 0 22px;
+  }
+  h1.hero-title .hl{
+    background:linear-gradient(180deg,transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%);
+    padding:0 .06em;
+  }
+  .hero-lead{font-size:17.5px;color:#33363c;max-width:520px;margin-bottom:30px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--ink);color:var(--paper);
+    padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 12px 26px rgba(17,18,20,.18);
+  }
+  .btn-primary:hover{transform:translateY(-3px);background:#000;box-shadow:0 18px 34px rgba(17,18,20,.24)}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1.5px solid rgba(17,18,20,.24);transition:border-color .25s ease, background .25s ease;
+  }
+  .btn-ghost:hover{border-color:var(--yellow-deep);background:rgba(247,196,0,.14)}
+
+  .hero-stats{display:flex;gap:38px;margin-top:46px;flex-wrap:wrap}
+  .stat b{display:block;font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1}
+  .stat span{font-size:13px;color:var(--gray);letter-spacing:.04em}
+
+  /* Hero 视觉卡 */
+  .hero-visual{position:relative}
+  .screen{
+    position:relative;border-radius:22px;overflow:hidden;
+    background:var(--ink);
+    box-shadow:var(--shadow);
+    aspect-ratio:4/3;
+  }
+  .screen svg{width:100%;height:100%}
+  .play-badge{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:82px;height:82px;border-radius:50%;
+    background:rgba(247,196,0,.94);color:var(--ink);
+    display:grid;place-items:center;
+    box-shadow:0 0 0 0 rgba(247,196,0,.5);
+    animation:pulse 2.6s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(247,196,0,.5)}
+    70%{box-shadow:0 0 0 26px rgba(247,196,0,0)}
+    100%{box-shadow:0 0 0 0 rgba(247,196,0,0)}
+  }
+  .screen-caption{
+    position:absolute;left:0;right:0;bottom:0;padding:20px 22px;
+    background:linear-gradient(to top, rgba(9,10,12,.9), transparent);
+    color:var(--paper);display:flex;justify-content:space-between;align-items:end;gap:12px;
+  }
+  .screen-caption b{font-size:15px}
+  .screen-caption span{font-size:12px;color:rgba(255,253,247,.72);letter-spacing:.16em;text-transform:uppercase}
+  .float-card{
+    position:absolute;right:-16px;bottom:-30px;
+    background:var(--white);border-radius:16px;padding:16px 20px;
+    box-shadow:var(--shadow);border:1px solid var(--line);
+    display:flex;align-items:center;gap:14px;max-width:270px;
+  }
+  .float-card .dot{width:10px;height:10px;border-radius:50%;background:#26b56b;box-shadow:0 0 0 4px rgba(38,181,107,.18)}
+  .float-card p{font-size:12.5px;color:var(--gray);line-height:1.5}
+  .float-card b{font-size:13.5px;display:block;color:var(--ink)}
+
+  /* 滚动条带 */
+  .ticker{
+    background:var(--ink);color:var(--paper);padding:16px 0;overflow:hidden;
+    border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .ticker-track{display:flex;gap:48px;white-space:nowrap;animation:slide 34s linear infinite;width:max-content}
+  .ticker-track span{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,253,247,.7);display:inline-flex;align-items:center;gap:48px}
+  .ticker-track span::after{content:"◆";color:var(--yellow);font-size:10px}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- 数据带 ---------- */
+  .numbers{background:var(--paper-2);padding:56px 0}
+  .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+  .num-item{text-align:center;padding:22px 12px;border-right:1px solid var(--line)}
+  .num-item:last-child{border-right:none}
+  .num-item b{display:block;font-size:clamp(30px,4vw,50px);font-weight:900;letter-spacing:-.04em;line-height:1.05}
+  .num-item b em{font-style:normal;color:var(--yellow-deep)}
+  .num-item span{font-size:13.5px;color:var(--gray);letter-spacing:.06em}
+
+  /* ---------- 关于 ---------- */
+  .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:start}
+  .about-visual{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--ink);aspect-ratio:5/6;box-shadow:var(--shadow)}
+  .about-visual svg{width:100%;height:100%}
+  .about-tag{
+    position:absolute;top:18px;left:18px;background:var(--yellow);color:var(--ink);
+    font-size:12px;font-weight:800;letter-spacing:.18em;padding:7px 14px;border-radius:999px;
+  }
+  .about-copy p{color:#3a3d43;margin-bottom:18px;font-size:15.5px}
+  .about-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  .about-list li{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 18px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .about-list li:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(17,18,20,.08)}
+  .about-list b{display:flex;align-items:center;gap:8px;font-size:15px;margin-bottom:6px}
+  .about-list b i{
+    font-style:normal;width:22px;height:22px;border-radius:7px;background:var(--yellow);
+    display:grid;place-items:center;font-size:12px;font-weight:900;
+  }
+  .about-list p{font-size:13.5px;color:var(--gray);margin:0;line-height:1.6}
+
+  /* ---------- 服务 ---------- */
+  .services{background:var(--ink);color:var(--paper)}
+  .services .eyebrow{color:rgba(255,253,247,.55)}
+  .services .eyebrow::before{background:var(--yellow)}
+  .services .section-sub{color:rgba(255,253,247,.6)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+  .svc-card{
+    background:#181a1e;border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);
+    padding:30px 26px;position:relative;overflow:hidden;
+    transition:transform .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .svc-card::before{
+    content:"";position:absolute;inset:0;background:radial-gradient(340px 180px at 90% 0%, rgba(247,196,0,.18), transparent 70%);
+    opacity:0;transition:opacity .35s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);border-color:rgba(247,196,0,.5);background:#1d2025}
+  .svc-card:hover::before{opacity:1}
+  .svc-icon{
+    width:52px;height:52px;border-radius:14px;background:rgba(247,196,0,.14);
+    display:grid;place-items:center;margin-bottom:20px;color:var(--yellow);
+  }
+  .svc-card h3{font-size:19px;margin-bottom:10px;font-weight:800;letter-spacing:-.01em}
+  .svc-card p{font-size:14px;color:rgba(255,253,247,.6);line-height:1.75}
+  .svc-card .idx{
+    position:absolute;top:22px;right:24px;font-size:13px;font-weight:800;
+    color:rgba(255,253,247,.22);letter-spacing:.12em;
+  }
+  .svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .svc-tags i{
+    font-style:normal;font-size:11.5px;padding:4px 10px;border-radius:999px;
+    background:rgba(255,255,255,.07);color:rgba(255,253,247,.72);letter-spacing:.04em;
+  }
+
+  /* ---------- 作品案例 ---------- */
+  .works-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap}
+  .filter-bar button{
+    padding:9px 20px;border-radius:999px;font-size:13.5px;font-weight:600;
+    border:1px solid var(--line);color:var(--gray);background:transparent;
+    transition:all .25s ease;
+  }
+  .filter-bar button.active,.filter-bar button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .work-card{
+    border-radius:var(--radius);overflow:hidden;background:var(--white);
+    border:1px solid var(--line);box-shadow:0 4px 14px rgba(17,18,20,.05);
+    transition:transform .3s ease, box-shadow .3s ease;display:flex;flex-direction:column;
+  }
+  .work-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(17,18,20,.13)}
+  .work-thumb{position:relative;aspect-ratio:16/10;background:var(--ink-2);overflow:hidden}
+  .work-thumb svg{width:100%;height:100%}
+  .work-badge{
+    position:absolute;top:14px;left:14px;background:rgba(9,10,12,.72);color:var(--paper);
+    font-size:11px;letter-spacing:.14em;padding:5px 11px;border-radius:999px;backdrop-filter:blur(4px);
+  }
+  .work-dur{
+    position:absolute;bottom:12px;right:14px;background:rgba(9,10,12,.78);color:var(--paper);
+    font-size:11.5px;padding:3px 9px;border-radius:6px;letter-spacing:.04em;
+  }
+  .work-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+  .work-body h3{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+  .work-body p{font-size:13.5px;color:var(--gray);line-height:1.7;flex:1}
+  .work-meta{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12.5px;color:var(--gray)}
+  .work-meta .play{color:var(--ink);font-weight:700;display:inline-flex;align-items:center;gap:6px}
+  .work-meta .play::before{content:"▶";font-size:9px;color:var(--yellow-deep)}
+
+  /* ---------- 客户 Logo ---------- */
+  .clients{background:var(--paper-2);padding:64px 0}
+  .clients .eyebrow{margin-bottom:8px}
+  .clients h2{font-size:22px;font-weight:800;margin-bottom:34px;letter-spacing:-.01em}
+  .logo-row{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .logo-chip{
+    height:64px;border-radius:12px;background:var(--white);border:1px solid var(--line);
+    display:grid;place-items:center;font-size:14px;font-weight:700;color:#4a4d54;
+    letter-spacing:.02em;transition:all .25s ease;
+  }
+  .logo-chip:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  /* ---------- 流程 ---------- */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:50px;counter-reset:step}
+  .step{
+    position:relative;padding:28px 22px 26px;background:var(--white);
+    border:1px solid var(--line);border-radius:var(--radius);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .step:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(17,18,20,.09)}
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-size:40px;font-weight:900;letter-spacing:-.04em;color:rgba(247,196,0,.55);
+    display:block;line-height:1;margin-bottom:16px;
+  }
+  .step h3{font-size:17px;font-weight:800;margin-bottom:8px}
+  .step p{font-size:13.5px;color:var(--gray);line-height:1.7}
+
+  /* ---------- 社区 / 动态 ---------- */
+  .community{background:var(--ink);color:var(--paper);overflow:hidden}
+  .community .eyebrow{color:rgba(255,253,247,.55)}
+  .community .eyebrow::before{background:var(--yellow)}
+  .community .section-sub{color:rgba(255,253,247,.62)}
+  .comm-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:50px}
+  .post-list{display:flex;flex-direction:column;gap:16px}
+  .post{
+    display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;
+    background:#181a1e;border:1px solid rgba(255,255,255,.09);border-radius:16px;
+    padding:18px;transition:border-color .25s ease, transform .25s ease;
+  }
+  .post:hover{border-color:rgba(247,196,0,.5);transform:translateX(5px)}
+  .post-date{
+    text-align:center;background:rgba(247,196,0,.12);border-radius:12px;padding:12px 6px;
+  }
+  .post-date b{display:block;font-size:24px;font-weight:900;color:var(--yellow);line-height:1}
+  .post-date span{font-size:11px;color:rgba(255,253,247,.55);letter-spacing:.1em}
+  .post h3{font-size:15.5px;font-weight:700;margin-bottom:6px;line-height:1.45}
+  .post p{font-size:13px;color:rgba(255,253,247,.55);line-height:1.6}
+  .post-cat{font-size:11px;color:var(--yellow);letter-spacing:.14em;font-weight:700}
+  .comm-aside{display:flex;flex-direction:column;gap:18px}
+  .community-card{
+    background:linear-gradient(150deg,#23262c,#16181c);
+    border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:28px;
+  }
+  .community-card h3{font-size:19px;font-weight:800;margin-bottom:10px}
+  .community-card p{font-size:13.8px;color:rgba(255,253,247,.6);line-height:1.75;margin-bottom:20px}
+  .community-metrics{display:flex;gap:26px;margin:18px 0 4px}
+  .community-metrics div b{display:block;font-size:26px;font-weight:900;color:var(--yellow);letter-spacing:-.03em}
+  .community-metrics div span{font-size:12px;color:rgba(255,253,247,.5)}
+  .join-btn{
+    display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--ink);
+    font-weight:800;font-size:14px;padding:12px 24px;border-radius:999px;
+    transition:transform .25s ease;
+  }
+  .join-btn:hover{transform:translateY(-2px)}
+
+  /* ---------- 设备/能力 ---------- */
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  .cap{
+    border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+    background:var(--white);display:flex;gap:18px;align-items:flex-start;
+  }
+  .cap svg{flex:0 0 auto;color:var(--yellow-deep)}
+  .cap h3{font-size:16px;font-weight:800;margin-bottom:6px}
+  .cap p{font-size:13.5px;color:var(--gray);line-height:1.7}
+
+  /* ---------- 联系 ---------- */
+  .contact{background:var(--paper-2)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .contact p.lead{color:#3a3d43;font-size:15.5px;margin-bottom:30px}
+  .contact-info{display:flex;flex-direction:column;gap:20px}
+  .ci{display:flex;gap:16px;align-items:flex-start}
+  .ci .ico{
+    width:42px;height:42px;border-radius:12px;background:var(--ink);color:var(--yellow);
+    display:grid;place-items:center;flex:0 0 auto;
+  }
+  .ci b{display:block;font-size:14.5px;margin-bottom:2px}
+  .ci span{font-size:13.5px;color:var(--gray);line-height:1.6}
+  .form-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px;box-shadow:0 18px 44px rgba(17,18,20,.08);
+  }
+  .form-card h3{font-size:20px;font-weight:800;margin-bottom:6px}
+  .form-card .hint{font-size:13px;color:var(--gray);margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:#3a3d43}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 15px;border-radius:11px;border:1.5px solid var(--line);
+    background:var(--paper);font-family:inherit;font-size:14px;color:var(--ink);
+    transition:border-color .2s ease, background .2s ease;
+    outline:none;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--yellow-deep);background:var(--white)}
+  .field textarea{resize:vertical;min-height:92px}
+  .field-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .submit-btn{
+    width:100%;padding:14px;border-radius:999px;background:var(--ink);color:var(--paper);
+    font-weight:800;font-size:15px;transition:background .25s ease, transform .2s ease;margin-top:6px;
+  }
+  .submit-btn:hover{background:var(--yellow-deep);color:var(--ink);transform:translateY(-2px)}
+  .form-msg{font-size:13px;color:#26b56b;font-weight:700;margin-top:12px;display:none}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{margin-top:44px;display:flex;flex-direction:column;gap:12px;max-width:900px}
+  .faq-item{border:1px solid var(--line);border-radius:14px;background:var(--white);overflow:hidden}
+  .faq-q{
+    width:100%;text-align:left;padding:20px 24px;font-size:15.5px;font-weight:700;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-q .plus{
+    width:26px;height:26px;border-radius:50%;background:var(--paper-2);
+    display:grid;place-items:center;font-size:15px;flex:0 0 auto;
+    transition:transform .3s ease, background .3s ease;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);background:var(--yellow)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-a p{padding:0 24px 22px;font-size:14px;color:var(--gray);line-height:1.8}
+
+  /* ---------- CTA 横幅 ---------- */
+  .cta-band{
+    background:var(--yellow);color:var(--ink);padding:72px 0;position:relative;overflow:hidden;
+  }
+  .cta-band::after{
+    content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;
+    border:40px solid rgba(17,18,20,.07);
+  }
+  .cta-inner{display:flex;justify-content:space-between;align-items:center;gap:36px;flex-wrap:wrap;position:relative;z-index:1}
+  .cta-inner h2{font-size:clamp(26px,3.6vw,44px);font-weight:900;letter-spacing:-.03em;line-height:1.15}
+  .cta-inner p{font-size:15px;color:rgba(17,18,20,.68);margin-top:8px;max-width:520px}
+  .cta-inner .btn-dark{
+    display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);
+    padding:16px 34px;border-radius:999px;font-weight:800;font-size:15px;white-space:nowrap;
+    transition:transform .25s ease;box-shadow:0 14px 30px rgba(17,18,20,.24);
+  }
+  .cta-inner .btn-dark:hover{transform:translateY(-3px)}
+
+  /* ---------- Footer ---------- */
+  footer{background:#0d0e10;color:rgba(255,253,247,.66);padding:70px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .foot-brand .brand{color:var(--paper);margin-bottom:18px}
+  .foot-brand p{font-size:13.5px;line-height:1.8;max-width:300px}
+  .foot-social{display:flex;gap:10px;margin-top:22px}
+  .foot-social a{
+    width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.06);
+    display:grid;place-items:center;font-size:12px;font-weight:700;color:rgba(255,253,247,.8);
+    transition:background .25s ease, color .25s ease;
+  }
+  .foot-social a:hover{background:var(--yellow);color:var(--ink)}
+  .foot-col h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);margin-bottom:18px;font-weight:800}
+  .foot-col a{display:block;font-size:13.5px;padding:6px 0;transition:color .2s ease}
+  .foot-col a:hover{color:var(--yellow)}
+  .foot-bottom{padding-top:26px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,253,247,.42)}
+  .foot-bottom a:hover{color:var(--yellow)}
+
+  /* reveal 动画 */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* 响应式 */
+  @media(max-width:1000px){
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:42px}
+    .svc-grid,.works-grid,.cap-grid{grid-template-columns:repeat(2,1fr)}
+    .numbers-grid{grid-template-columns:repeat(2,1fr)}
+    .num-item:nth-child(2){border-right:none}
+    .comm-grid{grid-template-columns:1fr}
+    .process-grid{grid-template-columns:repeat(2,1fr)}
+    .logo-row{grid-template-columns:repeat(3,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .float-card{right:0}
+  }
+  @media(max-width:720px){
+    section{padding:66px 0}
+    .wrap{padding:0 20px}
+    .nav-links{display:none}
+    .nav-links.open{
+      display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;
+      background:var(--paper);padding:22px 24px;gap:16px;border-bottom:1px solid var(--line);
+      box-shadow:0 18px 30px rgba(17,18,20,.1);
+    }
+    .menu-toggle{display:block}
+    .nav-cta{display:none}
+    .svc-grid,.works-grid,.cap-grid,.process-grid{grid-template-columns:1fr}
+    .about-list{grid-template-columns:1fr}
+    .numbers-grid{grid-template-columns:1fr 1fr}
+    .num-item{border-right:none;border-bottom:1px solid var(--line);padding:16px 8px}
+    .num-item:nth-child(3),.num-item:nth-child(4){border-bottom:none}
+    .logo-row{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr}
+    .field-2{grid-template-columns:1fr}
+    .hero-stats{gap:24px}
+    .form-card{padding:24px}
+    .float-card{position:static;margin-top:16px;max-width:none}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ================= 导航 ================= -->
+<header class="topbar" id="topbar">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="黄色传媒有限公司首页">
+      <span class="brand-mark">黄</span>
+      <span class="brand-name">黄色传媒有限公司<small>YELLOW MEDIA</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">关于我们</a>
+      <a href="#services">业务能力</a>
+      <a href="#works">作品案例</a>
+      <a href="#community">社区动态</a>
+      <a href="#process">合作流程</a>
+      <a href="#contact">联系我们</a>
+    </nav>
+    <a class="nav-cta" href="#contact">预约合作</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+  </div>
+</header>
+
+<!-- ================= Hero ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Brand Film · Documentary · Content</span>
+      <h1 class="hero-title">黄色传媒<br><span class="hl">让影像</span>说话</h1>
+      <p class="hero-lead">
+        一家专注于品牌影像与内容生态的综合型视频传媒机构。我们用扎实的创作方法论、成熟的制作流程与持续生长的社区，把品牌想说的话，变成观众愿意看完的画面。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#works">观看作品精选
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn-ghost" href="#services">了解业务能力</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>12<span style="font-size:20px">年</span></b><span>影像创作经验</span></div>
+        <div class="stat"><b>860+</b><span>交付视频项目</span></div>
+        <div class="stat"><b>3.4亿</b><span>累计全网播放</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="screen">
+        <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="品牌影像作品画面示意">
+          <defs>
+            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2a2d33"/>
+              <stop offset="1" stop-color="#15171b"/>
+            </linearGradient>
+            <linearGradient id="sunG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f7c400"/>
+              <stop offset="1" stop-color="#e0a800"/>
+            </linearGradient>
+            <linearGradient id="mntG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3b3f47"/>
+              <stop offset="1" stop-color="#22252a"/>
+            </linearGradient>
+            <linearGradient id="mntG2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4a4f58"/>
+              <stop offset="1" stop-color="#2b2f35"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="480" fill="url(#skyG)"/>
+          <circle cx="470" cy="150" r="86" fill="url(#sunG)" opacity=".92"/>
+          <circle cx="470" cy="150" r="130" fill="#f7c400" opacity=".08"/>
+          <path d="M0 330 L130 200 L230 300 L330 190 L440 320 L540 230 L640 330 L640 480 L0 480 Z" fill="url(#mntG2)" opacity=".9"/>
+          <path d="M0 380 L120 290 L250 370 L380 280 L500 380 L640 300 L640 480 L0 480 Z" fill="url(#mntG)"/>
+          <g opacity=".5" fill="#f7c400">
+            <circle cx="90" cy="90" r="2.2"/>
+            <circle cx="180" cy="60" r="1.6"/>
+            <circle cx="280" cy="110" r="2"/>
+            <circle cx="560" cy="70" r="1.8"/>
+            <circle cx="610" cy="140" r="2.2"/>
+            <circle cx="380" cy="46" r="1.5"/>
+          </g>
+          <g stroke="#f7c400" stroke-width="2" opacity=".8">
+            <line x1="40" y1="440" x2="120" y2="440"/>
+            <line x1="140" y1="440" x2="180" y2="440"/>
+            <line x1="200" y1="440" x2="300" y2="440"/>
+          </g>
+        </svg>
+        <div class="play-badge" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </div>
+        <div class="screen-caption">
+          <div><b>《向光而行》品牌形象片</b></div>
+          <span>4K · 02:48</span>
+        </div>
+      </div>
+      <div class="float-card">
+        <span class="dot"></span>
+        <p><b>本周新增 12 支作品</b>来自黄色传媒创作团队与社区共创计划</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 滚动条带 ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>品牌形象片</span><span>产品广告</span><span>纪录片</span><span>短视频矩阵</span><span>直播导播</span><span>内容运营</span>
+    <span>品牌形象片</span><span>产品广告</span><span>纪录片</span><span>短视频矩阵</span><span>直播导播</span><span>内容运营</span>
+    <span>品牌形象片</span><span>产品广告</span><span>纪录片</span><span>短视频矩阵</span><span>直播导播</span><span>内容运营</span>
+  </div>
+</div>
+
+<!-- ================= 数据 ================= -->
+<section class="numbers" aria-label="关键数据">
+  <div class="wrap numbers-grid">
+    <div class="num-item reveal"><b>860<em>+</em></b><span>累计交付项目</span></div>
+    <div class="num-item reveal"><b>120<em>+</em></b><span>长期合作品牌</span></div>
+    <div class="num-item reveal"><b>18<em>万</em></b><span>社区创作者</span></div>
+    <div class="num-item reveal"><b>96<em>%</em></b><span>客户续约率</span></div>
+  </div>
+</section>
+
+<!-- ================= 关于 ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <span class="about-tag">ABOUT US</span>
+      <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="黄色传媒摄影棚场景示意">
+        <defs>
+          <linearGradient id="studioBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1e2126"/>
+            <stop offset="1" stop-color="#101216"/>
+          </linearGradient>
+          <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f7c400" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#f7c400" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="500" height="600" fill="url(#studioBg)"/>
+        <path d="M210 0 L290 0 L400 430 L100 430 Z" fill="url(#beam)"/>
+        <ellipse cx="250" cy="440" rx="150" ry="26" fill="#f7c400" opacity=".16"/>
+        <g fill="#2f333a">
+          <rect x="120" y="330" width="260" height="12" rx="6"/>
+          <rect x="150" y="342" width="14" height="90" rx="4"/>
+          <rect x="336" y="342" width="14" height="90" rx="4"/>
+        </g>
+        <g fill="#3c414a">
+          <circle cx="250" cy="250" r="52"/>
+          <rect x="226" y="298" width="48" height="34" rx="12"/>
+        </g>
+        <circle cx="250" cy="234" r="20" fill="#f7c400" opacity=".85"/>
+        <g stroke="#f7c400" stroke-width="2.5" opacity=".85" fill="none">
+          <circle cx="250" cy="250" r="76"/>
+          <circle cx="250" cy="250" r="96" stroke-dasharray="4 12"/>
+        </g>
+        <g fill="#f7c400" opacity=".72">
+          <rect x="60" y="70" width="6" height="60" rx="3"/>
+          <rect x="430" y="120" width="6" height="90" rx="3"/>
+          <rect x="80" y="480" width="6" height="52" rx="3"/>
+        </g>
+        <g font-family="PingFang SC, sans-serif" fill="#f7c400" opacity=".9">
+          <text x="60" y="520" font-size="20" font-weight="800" letter-spacing="2">REC</text>
+        </g>
+        <circle cx="50" cy="544" r="5" fill="#e0402f"/>
+      </svg>
+    </div>
+
+    <div class="about-copy reveal">
+      <span class="eyebrow">关于黄色传媒</span>
+      <h2 class="section-title">把复杂的表达，<br>拍成简单的好画面</h2>
+      <p>黄色传媒有限公司成立于品牌内容需求快速变化的时代。我们相信，好的影像不是堆砌设备与特效，而是对品牌意图的准确翻译——先想清楚要说什么，再决定怎么拍。</p>
+      <p>团队由导演、编剧、摄影、剪辑、调色、内容运营与社区运营组成，覆盖从策略策划到成片交付、从单支影片到内容矩阵长效运营的完整链路。我们把每一次项目都当作一次长期的品牌资产建设。</p>
+      <ul class="about-list">
+        <li><b><i>策</i>策略先行</b><p>先做内容策略与受众洞察，再进入创意与拍摄，避免无效创作。</p></li>
+        <li><b><i>制</i>工业化制作</b><p>标准化制片流程与质量管理节点，保障交付周期与成片稳定。</p></li>
+        <li><b><i>营</i>内容运营</b><p>成片只是起点，我们帮助品牌建立可持续更新的内容节奏。</p></li>
+        <li><b><i>社</i>社区共创</b><p>连接创作者与品牌，让好内容在生产端与观众端同时发生。</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 业务 ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Services</span>
+      <h2 class="section-title">六类核心业务能力</h2>
+      <p class="section-sub">从品牌策略到内容分发，黄色传媒以模块化能力组合，为客户提供可拆分、可组合的视频内容解决方案。</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <span class="idx">01</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>品牌形象片</h3>
+        <p>从品牌定位出发，构建具有辨识度的视觉语言与叙事结构，让一支影片成为品牌长期可用的资产。</p>
+        <div class="svc-tags"><i>企业宣传片</i><i>品牌TVC</i><i>年度大片</i></div>
+      </article>
+      <article class="svc-card reveal">
+        <span class="idx">02</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6L12 16.8 6.6 19.6l1.2-6L3.3 9.4l6.1-.8z"/></svg>
+        </div>
+        <h3>产品广告</h3>
+        <p>以产品卖点为核心，结合场景化表达与视觉质感，完成从卖点到记忆点的转化。</p>
+        <div class="svc-tags"><i>电商视频</i><i>新品发布</i><i>详情页短片</i></div>
+      </article>
+      <article class="svc-card reveal">
+        <span class="idx">03</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 5h16v11H4z"/><path d="M8 20h8M12 16v4"/></svg>
+        </div>
+        <h3>纪录片创作</h3>
+        <p>深入真实场景与人物故事，用长期观察与克制表达，沉淀有厚度的内容作品。</p>
+        <div class="svc-tags"><i>人物纪录</i><i>企业纪实</i><i>城市影像</i></div>
+      </article>
+      <article class="svc-card reveal">
+        <span class="idx">04</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="7" rx="2"/><rect x="13" y="13" width="8" height="7" rx="2"/></svg>
+        </div>
+        <h3>短视频矩阵</h3>
+        <p>围绕平台算法与用户习惯设计内容结构，批量输出可持续更新的短视频内容。</p>
+        <div class="svc-tags"><i>账号冷启动</i><i>内容日历</i><i>爆款拆解</i></div>
+      </article>
+      <article class="svc-card reveal">
+        <span class="idx">05</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        </div>
+        <h3>直播与导播</h3>
+        <p>提供多机位直播、活动导播与实时包装能力，保障关键节点的传播质量。</p>
+        <div class="svc-tags"><i>发布会</i><i>电商直播</i><i>活动转播</i></div>
+      </article>
+      <article class="svc-card reveal">
+        <span class="idx">06</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 17l5-6 4 4 3-4 6 6"/><circle cx="7" cy="7" r="2"/></svg>
+        </div>
+        <h3>内容运营</h3>
+        <p>以数据反馈驱动内容迭代，帮助品牌建立稳定的内容生产与分发机制。</p>
+        <div class="svc-tags"><i>数据复盘</i><i>选题规划</i><i>账号代运营</i></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 作品 ================= -->
+<section id="works">
+  <div class="wrap">
+    <div class="works-head">
+      <div class="reveal">
+        <span class="eyebrow">Selected Works</span>
+        <h2 class="section-title">作品精选</h2>
+        <p class="section-sub">每一个项目都从理解开始，以交付完成。以下为部分代表性作品。</p>
+      </div>
+      <div class="filter-bar reveal" id="filterBar">
+        <button class="active" data-filter="all">全部</button>
+        <button data-filter="brand">品牌片</button>
+        <button data-filter="doc">纪录片</button>
+        <button data-filter="short">短视频</button>
+      </div>
+    </div>
+
+    <div class="works-grid" id="worksGrid">
+      <article class="work-card reveal" data-cat="brand">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-label="作品封面一">
+            <defs><linearGradient id="w1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2d33"/><stop offset="1" stop-color="#141619"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#w1)"/>
+            <circle cx="310" cy="80" r="46" fill="#f7c400" opacity=".9"/>
+            <path d="M0 200 Q100 140 200 190 T400 170 V250 H0 Z" fill="#3a3f47"/>
+            <path d="M0 220 Q120 180 240 215 T400 205 V250 H0 Z" fill="#262a30"/>
+            <line x1="40" y1="56" x2="110" y2="56" stroke="#f7c400" stroke-width="3"/>
+          </svg>
+          <span class="work-badge">品牌形象</span>
+          <span class="work-dur">02:48</span>
+        </div>
+        <div class="work-body">
+          <h3>《向光而行》品牌形象片</h3>
+          <p>以城市清晨为叙事起点，讲述一家制造企业十二年间的坚持与变化。</p>
+          <div class="work-meta"><span>品牌片 · 4K</span><span class="play">查看案例</span></div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="doc">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-label="作品封面二">
+            <defs><linearGradient id="w2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1f24"/><stop offset="1" stop-color="#0f1114"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#w2)"/>
+            <rect x="90" y="60" width="220" height="130" rx="8" fill="#2b3037"/>
+            <rect x="108" y="78" width="184" height="94" rx="4" fill="#12151a"/>
+            <g stroke="#f7c400" stroke-width="2" opacity=".8"><polyline points="120,150 150,120 180,140 210,100 240,125 270,95" fill="none"/></g>
+            <circle cx="270" cy="95" r="5" fill="#f7c400"/>
+            <line x1="90" y1="216" x2="310" y2="216" stroke="#3a3f47" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span class="work-badge">纪录片</span>
+          <span class="work-dur">18:05</span>
+        </div>
+        <div class="work-body">
+          <h3>《手艺人》系列纪录短片</h3>
+          <p>记录六位非遗手艺人的日常，用真实的镜头语言保存时间留下的痕迹。</p>
+          <div class="work-meta"><span>纪录片 · 系列</span><span class="play">查看案例</span></div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="short">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-label="作品封面三">
+            <defs><linearGradient id="w3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#221f16"/><stop offset="1" stop-color="#121315"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#w3)"/>
+            <rect x="60" y="46" width="120" height="160" rx="12" fill="#2c3037"/>
+            <rect x="72" y="58" width="96" height="136" rx="6" fill="#13161a"/>
+            <rect x="220" y="66" width="120" height="80" rx="12" fill="#2c3037"/>
+            <rect x="232" y="78" width="96" height="56" rx="6" fill="#13161a"/>
+            <circle cx="120" cy="126" r="22" fill="#f7c400" opacity=".85"/>
+            <path d="M113 114v24l20-12z" fill="#121315"/>
+            <rect x="220" y="166" width="120" height="40" rx="12" fill="#f7c400" opacity=".9"/>
+          </svg>
+          <span class="work-badge">短视频</span>
+          <span class="work-dur">00:45</span>
+        </div>
+        <div class="work-body">
+          <h3>新品上市短视频矩阵</h3>
+          <p>单月产出 40 支短视频，覆盖多平台分发场景，形成完整的种草与转化链路。</p>
+          <div class="work-meta"><span>短视频 · 矩阵</span><span class="play">查看案例</span></div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="brand">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-label="作品封面四">
+            <defs><linearGradient id="w4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#252a30"/><stop offset="1" stop-color="#101216"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#w4)"/>
+            <g stroke="#3f454e" stroke-width="2" fill="none" opacity=".8">
+              <rect x="80" y="70" width="60" height="110" rx="8"/>
+              <rect x="170" y="50" width="60" height="130" rx="8"/>
+              <rect x="260" y="90" width="60" height="90" rx="8"/>
+            </g>
+            <circle cx="200" cy="120" r="34" fill="#f7c400"/>
+            <path d="M188 104v32l26-16z" fill="#121315"/>
+          </svg>
+          <span class="work-badge">产品广告</span>
+          <span class="work-dur">01:12</span>
+        </div>
+        <div class="work-body">
+          <h3>智能硬件产品广告</h3>
+          <p>围绕产品核心功能构建视觉场景，以质感画面完成从参数到体验的表达转换。</p>
+          <div class="work-meta"><span>产品片 · 4K</span><span class="play">查看案例</span></div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="doc">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-label="作品封面五">
+            <defs><linearGradient id="w5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e2126"/><stop offset="1" stop-color="#0e1013"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#w5)"/>
+            <g fill="none" stroke="#f7c400" stroke-width="2" opacity=".85">
+              <circle cx="200" cy="120" r="60"/>
+              <circle cx="200" cy="120" r="78" stroke-dasharray="3 10"/>
+              <path d="M200 42v156M122 120h156"/>
+            </g>
+            <circle cx="200" cy="120" r="20" fill="#f7c400"/>
+            <g fill="#3f454e">
+              <rect x="44" y="196" width="70" height="8" rx="4"/>
+              <rect x="286" y="196" width="70" height="8" rx="4"/>
+            </g>
+          </svg>
+          <span class="work-badge">城市影像</span>
+          <span class="work-dur">12:30</span>
+        </div>
+        <div class="work-body">
+          <h3>《城市切片》影像计划</h3>
+          <p>以十二个街区为样本，记录城市更新过程中普通人的生活切面与情感记忆。</p>
+          <div class="work-meta"><span>纪录片 · 城市</span><span class="play">查看案例</span></div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="short">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-label="作品封面六">
+            <defs><linearGradient id="w6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a2417"/><stop offset="1" stop-color="#131416"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#w6)"/>
+            <g fill="#f7c400">
+              <rect x="60" y="150" width="30" height="50" rx="6" opacity=".95"/>
+              <rect x="104" y="118" width="30" height="82" rx="6" opacity=".8"/>
+              <rect x="148" y="92" width="30" height="108" rx="6" opacity=".65"/>
+              <rect x="192" y="130" width="30" height="70" rx="6" opacity=".85"/>
+              <rect x="236" y="72" width="30" height="128" rx="6" opacity=".55"/>
+              <rect x="280" y="112" width="30" height="88" rx="6" opacity=".75"/>
+            </g>
+            <line x1="46" y1="200" x2="354" y2="200" stroke="#4a4f58" stroke-width="3"/>
+          </svg>
+          <span class="work-badge">数据内容</span>
+          <span class="work-dur">01:30</span>
+        </div>
+        <div class="work-body">
+          <h3>年度数据可视化短片</h3>
+          <p>把年度经营数据转化为可视叙事，让汇报内容更具传播力与记忆点。</p>
+          <div class="work-meta"><span>短视频 · 数据</span><span class="play">查看案例</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 客户 ================= -->
+<section class="clients">
+  <div class="wrap">
+    <span class="eyebrow">Trusted By</span>
+    <h2>与不同行业品牌长期同行</h2>
+    <div class="logo-row">
+      <div class="logo-chip">久川智造</div>
+      <div class="logo-chip">南屿生活</div>
+      <div class="logo-chip">云启科技</div>
+      <div class="logo-chip">青禾食品</div>
+      <div class="logo-chip">牧野汽车</div>
+      <div class="logo-chip">星海文旅</div>
+      <div class="logo-chip">拾光教育</div>
+      <div class="logo-chip">合川医疗</div>
+      <div class="logo-chip">北辰家居</div>
+      <div class="logo-chip">溪谷农业</div>
+      <div class="logo-chip">原野户外</div>
+      <div class="logo-chip">光年数字</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 流程 ================= -->
+<section id="process">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2 class="section-title">四步完成一次<br>高质量影像合作</h2>
+      <p class="section-sub">流程清晰是交付稳定的前提。黄色传媒用标准化的协作方式，让每一步都可预期、可沟通。</p>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal">
+        <h3>需求诊断</h3>
+        <p>与客户对齐目标、受众与投放场景，明确内容要解决的核心问题，输出策划提案。</p>
+      </div>
+      <div class="step reveal">
+        <h3>创意策划</h3>
+        <p>完成脚本、分镜与视觉方案，确认拍摄计划与预算结构，减少执行阶段的反复。</p>
+      </div>
+      <div class="step reveal">
+        <h3>制作执行</h3>
+        <p>制片统筹、现场拍摄与后期制作并行推进，关键节点同步进度与样片反馈。</p>
+      </div>
+      <div class="step reveal">
+        <h3>交付与运营</h3>
+        <p>成片多规格交付，配套数据复盘与内容建议，帮助品牌持续放大传播效果。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 能力/设备 ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Capabilities</span>
+      <h2 class="section-title">设备与团队保障</h2>
+      <p class="section-sub">硬件是基础，团队是核心。我们把两者结合起来，保证每一个镜头都经得起放大看。</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
+        <div><h3>专业摄影器材库</h3><p>电影级摄影机、定焦镜头组、稳定器与航拍设备，支持多场景拍摄需求。</p></div>
+      </div>
+      <div class="cap reveal">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3z"/><path d="M7 15l3-4 3 3 2-2 2 3"/></svg>
+        <div><h3>后期与调色</h3><p>独立后期空间与专业调色系统，配备声音设计与特效包装能力。</p></div>
+      </div>
+      <div class="cap reveal">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15 15c2.6 0 6 1.6 6 4.4"/></svg>
+        <div><h3>稳定核心团队</h3><p>导演、制片、摄影、剪辑、运营多角色协同，长期磨合降低沟通成本。</p></div>
+      </div>
+      <div class="cap reveal">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+        <div><h3>多平台分发经验</h3><p>熟悉主流内容平台的规则与节奏，能针对不同渠道输出匹配版本。</p></div>
+      </div>
+      <div class="cap reveal">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5h16v14z"/><path d="M8 15l3-4 2 2 3-4"/></svg>
+        <div><h3>数据复盘机制</h3><p>项目结束后提供播放与互动数据分析，为下一轮内容提供决策依据。</p></div>
+      </div>
+      <div class="cap reveal">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 6.5 1-4.7 4.6 1.1 6.4L12 17l-5.9 3 1.1-6.4L2.5 9 9 8z"/></svg>
+        <div><h3>质量标准流程</h3><p>从剧本评审到成片终审设置多个质控节点，确保每个环节可追溯。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 社区 ================= -->
+<section class="community" id="community">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Community</span>
+      <h2 class="section-title">一个持续生长的<br>创作者社区</h2>
+      <p class="section-sub">黄色传媒不仅制作内容，也连接内容背后的人。社区持续举办开放日、创作营与作品共赏活动，让创意与经验在这里流动。</p>
+    </div>
+    <div class="comm-grid">
+      <div class="post-list">
+        <article class="post reveal">
+          <div class="post-date"><b>18</b><span>NOV</span></div>
+          <div>
+            <span class="post-cat">创作营</span>
+            <h3>第七期「短片创作营」开放报名，主题：日常中的戏剧性</h3>
+            <p>面向创作者与内容从业者，由团队导演与剪辑指导带来为期三天的实战工作坊。</p>
+          </div>
+        </article>
+        <article class="post reveal">
+          <div class="post-date"><b>09</b><span>NOV</span></div>
+          <div>
+            <span class="post-cat">放映会</span>
+            <h3>社区作品共赏会：十二支素人短片同台放映</h3>
+            <p>本次共赏会共收到 96 份投稿，最终选出十二支作品在现场放映并交流创作过程。</p>
+          </div>
+        </article>
+        <article class="post reveal">
+          <div class="post-date"><b>27</b><span>OCT</span></div>
+          <div>
+            <span class="post-cat">开放日</span>
+            <h3>走进黄色传媒：一次完整的影片制作流程参观</h3>
+            <p>参与者近距离了解从前期策划到后期调色的完整链路，并在现场完成一次小型拍摄。</p>
+          </div>
+        </article>
+        <article class="post reveal">
+          <div class="post-date"><b>15</b><span>OCT</span></div>
+          <div>
+            <span class="post-cat">分享</span>
+            <h3>内容运营公开课：品牌短视频的选题方法论</h3>
+            <p>围绕选题来源、结构模板与数据反馈，分享可复用的短视频内容生产思路。</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="comm-aside">
+        <div class="community-card reveal">
+          <h3>加入创作者社区</h3>
+          <p>无论你是导演、摄影、剪辑，还是刚开始接触影像的爱好者，这里都欢迎你带着作品和想法来交流。</p>
+          <div class="community-metrics">
+            <div><b>18万</b><span>社区成员</span></div>
+            <div><b>2,400</b><span>投稿作品</span></div>
+          </div>
+          <a class="join-btn" href="#contact">申请加入
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="community-card reveal">
+          <h3>社区月度数据</h3>
+          <p>社区活跃度持续稳定，每月新增创作者与作品数量保持正向增长。</p>
+          <div class="community-metrics">
+            <div><b>+36%</b><span>月度活跃增长</span></div>
+            <div><b>4.8</b><span>活动满意度</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">常见问题</h2>
+      <p class="section-sub">如果你还有别的疑问，欢迎通过页面底部的联系方式与我们沟通。</p>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item reveal">
+        <button class="faq-q">一支品牌片通常需要多长制作周期？<span class="plus">+</span></button>
+        <div class="faq-a"><p>常规品牌形象片的完整周期约为 4 至 8 周，包含需求沟通、策划脚本、拍摄执行与后期制作。若项目需要跨城市拍摄或复杂特效，周期会相应延长，我们会在提案阶段给出明确的时间表。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">是否可以只委托拍摄或只委托后期？<span class="plus">+</span></button>
+        <div class="faq-a"><p>可以。黄色传媒的服务模块支持拆分，客户可根据自身情况单独选择策划、拍摄、剪辑、调色或内容运营等环节。我们也会根据现有素材给出可行性建议。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">短视频矩阵合作一般如何计费？<span class="plus">+</span></button>
+        <div class="faq-a"><p>短视频矩阵通常按月或按季度进行合作，费用与内容数量、拍摄复杂度、是否需要出镜与场景搭建相关。我们会在需求诊断后提供包含内容数量的报价方案。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">社区活动如何参与？<span class="plus">+</span></button>
+        <div class="faq-a"><p>社区活动会提前在动态栏目与官方渠道发布报名信息。创作营与开放日通常需要提前申请，部分活动对投稿作品有基本要求，具体以每期活动说明为准。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">作品版权如何约定？<span class="plus">+</span></button>
+        <div class="faq-a"><p>项目成片的版权归属、使用范围与授权期限会在合同中明确约定。我们尊重创作者的署名权，也会在获得许可的前提下将作品用于案例展示。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA 横幅 ================= -->
+<div class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>让下一个好故事，从一次对话开始</h2>
+      <p>告诉我们你的品牌想要表达什么，黄色传媒会用专业的方式，把它变成观众记得住的画面。</p>
+    </div>
+    <a class="btn-dark" href="#contact">预约沟通
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ================= 联系 ================= -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">联系我们</h2>
+      <p class="lead">无论是品牌影像项目、内容长期合作，还是社区活动咨询，欢迎随时找到我们。我们通常在 1 个工作日内回复。</p>
+      <div class="contact-info">
+        <div class="ci">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.7 2 2 0 0 1 3.1 1.5H5.7a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L6.8 9.3a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+          </div>
+          <div><b>商务合作电话</b><span>021-6688-3399（工作日 9:30 - 18:30）</span></div>
+        </div>
+        <div class="ci">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+          </div>
+          <div><b>项目咨询邮箱</b><span>hello@yellow-media.example</span></div>
+        </div>
+        <div class="ci">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          </div>
+          <div><b>公司地址</b><span>上海市杨浦区滨江创意园 7 号楼 3 层 黄色传媒</span></div>
+        </div>
+        <div class="ci">
+          <div class="ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <div><b>社区事务</b><span>community@yellow-media.example</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <h3>预约项目沟通</h3>
+      <p class="hint">填写基本信息，我们会尽快与你取得联系。</p>
+      <form id="contactForm" novalidate>
+        <div class="field-2">
+          <div class="field">
+            <label for="name">称呼 *</label>
+            <input id="name" name="name" type="text" placeholder="您的姓名或称呼" required>
+          </div>
+          <div class="field">
+            <label for="phone">联系方式 *</label>
+            <input id="phone" name="phone" type="text" placeholder="手机或邮箱" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="company">公司 / 品牌</label>
+          <input id="company" name="company" type="text" placeholder="选填">
+        </div>
+        <div class="field">
+          <label for="type">项目类型</label>
+          <select id="type" name="type">
+            <option>品牌形象片</option>
+            <option>产品广告</option>
+            <option>纪录片创作</option>
+            <option>短视频矩阵</option>
+            <option>直播与导播</option>
+            <option>内容运营</option>
+            <option>社区合作</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">需求简述</label>
+          <textarea id="msg" name="msg" placeholder="简单描述你的项目背景与期望"></textarea>
+        </div>
+        <button class="submit-btn" type="submit">提交预约</button>
+        <p class="form-msg" id="formMsg">已收到你的信息，我们会尽快与你联系。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-mark">黄</span>
+          <span class="brand-name" style="color:var(--paper)">黄色传媒有限公司<small>YELLOW MEDIA</small></span>
+        </div>
+        <p>专注品牌影像、纪录片创作与内容生态运营的综合型视频传媒机构。用影像连接品牌与观众，让好内容持续生长。</p>
+        <div class="foot-social">
+          <a href="#top" aria-label="微博">微博</a>
+          <a href="#top" aria-label="视频号">视频号</a>
+          <a href="#top" aria-label="小红书">小红书</a>
+          <a href="#top" aria-label="B站">B站</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>业务</h4>
+        <a href="#services">品牌形象片</a>
+        <a href="#services">产品广告</a>
+        <a href="#services">纪录片创作</a>
+        <a href="#services">短视频矩阵</a>
+        <a href="#services">直播与导播</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <a href="#about">公司介绍</a>
+        <a href="#works">作品案例</a>
+        <a href="#process">合作流程</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <a href="#community">社区动态</a>
+        <a href="#community">创作营</a>
+        <a href="#community">放映会</a>
+        <a href="#contact">加入我们</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 黄色传媒有限公司 · 保留所有权利</span>
+      <span><a href="#top">隐私政策</a> · <a href="#top">使用条款</a> · <a href="#top">回到顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 导航滚动效果 */
+  var topbar = document.getElementById('topbar');
+  function onScroll(){
+    if(window.scrollY > 12){ topbar.classList.add('scrolled'); }
+    else{ topbar.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* 移动端菜单 */
+  var toggle = document.getElementById('menuToggle');
+  var navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    navLinks.classList.toggle('open');
+    toggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navLinks.classList.remove('open');
+      toggle.textContent = '☰';
+    });
+  });
+
+  /* 滚动揭示 */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el, i){
+      el.style.transitionDelay = (Math.min(i % 6, 5) * 60) + 'ms';
+      io.observe(el);
+    });
+  }else{
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* 作品筛选 */
+  var filterBar = document.getElementById('filterBar');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#worksGrid .work-card'));
+  filterBar.addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-filter]');
+    if(!btn) return;
+    filterBar.querySelectorAll('button').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var f = btn.getAttribute('data-filter');
+    cards.forEach(function(card){
+      var show = (f === 'all') || (card.getAttribute('data-cat') === f);
+      card.style.display = show ? '' : 'none';
+    });
+  });
+
+  /* FAQ 手风琴 */
+  var faqList = document.getElementById('faqList');
+  faqList.addEventListener('click', function(e){
+    var q = e.target.closest('.faq-q');
+    if(!q) return;
+    var item = q.parentElement;
+    var ans = item.querySelector('.faq-a');
+    var isOpen = item.classList.contains('open');
+    faqList.querySelectorAll('.faq-item').forEach(function(it){
+      it.classList.remove('open');
+      it.querySelector('.faq-a').style.maxHeight = '0px';
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  });
+
+  /* 平滑锚点（兼容不支持 scroll-behavior 的浏览器） */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length < 2) return;
+      var target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.scrollY - 66;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  });
+
+  /* 表单提交演示 */
+  var form = document.getElementById('contactForm');
+  var msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    if(!name || !phone){
+      msg.style.display = 'block';
+      msg.style.color = '#e0402f';
+      msg.textContent = '请填写称呼与联系方式后再提交。';
+      return;
+    }
+    msg.style.display = 'block';
+    msg.style.color = '#26b56b';
+    msg.textContent = '已收到你的信息，我们会尽快与你联系。';
+    form.reset();
+    setTimeout(function(){ msg.style.display = 'none'; }, 6000);
+  });
+
+  /* 数字滚动动画 */
+  var nums = document.querySelectorAll('.num-item b');
+  var animated = new WeakSet();
+  function animateNum(el){
+    var raw = el.textContent.trim();
+    var match = raw.match(/^([\d.]+)(.*)$/);
+    if(!match) return;
+    var target = parseFloat(match[1]);
+    var suffix = match[2] || '';
+    var isFloat = match[1].indexOf('.') > -1;
+    var start = 0, dur = 1100, t0 = null;
+    function step(t){
+      if(!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = start + (target - start) * eased;
+      el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var nio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting && !animated.has(en.target)){
+          animated.add(en.target);
+          animateNum(en.target);
+          nio.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.5});
+    nums.forEach(function(n){ nio.observe(n); });
+  }
+})();
+</script>
+</body>
+            </html>
